@@ -6,11 +6,16 @@ export default {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  theme: {
+    theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+      animation: {
+        bounceSlow: "bounceSlow 2s infinite",
+      },
+      keyframes: {
+        bounceSlow: {
+          "0%, 100%": { transform: "translateY(-10%)", animationTimingFunction: "ease-in-out" },
+          "50%": { transform: "translateY(0)", animationTimingFunction: "ease-in-out" },
+        },
       },
     },
   },

@@ -2,20 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+
+
+.h-nav { 
+  height: calc(100vh - 3.5rem)
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Global styles for form elements */
+input,
+textarea,
+select{
+  @apply border border-gray-300 rounded;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+input:focus,
+textarea:focus,
+select:focus {
+  @apply border-indigo-600;
+}
+
+input:active,
+textarea:active,
+select:active {
+  @apply border-indigo-600;
 }
