@@ -1,6 +1,6 @@
 "use client";
 
-import Router from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { IoTrashOutline } from "react-icons/io5";
@@ -12,7 +12,7 @@ export default function CreateQuizPage() {
   const [questions, setQuestions] = useState([
     { text: "", answers: [{ text: "", is_correct: false }] },
   ]);
-  const router = Router.useRouter();
+  const router = useRouter();
 
     useEffect(() => {
       const fetchUser = async () => {
