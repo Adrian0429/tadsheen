@@ -10,9 +10,9 @@ const BluetoothPrintButton = () => {
       setStatus("Searching for RPP02N...");
 
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const device = await (navigator as any).bluetooth.requestDevice({
-        filters: [{ name: "RPP02N" }],
-        optionalServices: [0x1812],
+      const device = await(navigator as any).bluetooth.requestDevice({
+        acceptAllDevices: true, // Discover all Bluetooth devices
+        optionalServices: [0x1812], // Still request HID service
       });
 
       setStatus(`Connecting to ${device.name}...`);
