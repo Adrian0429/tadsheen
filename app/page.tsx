@@ -1,23 +1,27 @@
-"use client";
+import React from "react";
 
-const Home = () => {
-  const handleConnectAndPrint = () => {
-    if (typeof window !== "undefined") {
-      import("../app/print").then(({ startBluetoothPrint }) => {
-        startBluetoothPrint();
-      });
-    }
+export default function PrintPage() {
+  const handlePrint = () => {
+    // Construct the print URL following the Bluetooth Print app scheme
+    const printUrl =
+      "my.bluetoothprint.scheme://https://tadsheen.vercel.app/api/print";
+
+    const link = document.createElement("a");
+    link.href = printUrl;
+    link.click();
   };
 
   return (
-    <div>
-      <h1>Bluetooth Print</h1>
-      <button className="border px-5 py-5 bg-blue-300" id="connect" onClick={handleConnectAndPrint}>
-        Connect and Print
-      </button>
-      <p id="status"></p>
+    <div className="flex min-h-screen items-center justify-center bg-gray-100 p-4">
+      <div className="bg-white p-8 rounded-lg shadow-md text-center">
+        <h1 className="text-2xl font-bold mb-4">Bluetooth Thermal Printer</h1>
+        <button
+          onClick={handlePrint}
+          className="bg-blue-500 hover:bg-blue-600 text-white"
+        >
+          Print Hello World
+        </button>
+      </div>
     </div>
   );
-};
-
-export default Home;
+}
