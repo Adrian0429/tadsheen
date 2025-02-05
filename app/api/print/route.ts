@@ -1,14 +1,12 @@
 export async function GET() {
   const printData = {
-    data: [
-      {
-        type: 0,
-        content: 'Hello World!',
-        bold: 1,
-        align: 1,
-        format: 0
-      }
-    ]
+    "0": {
+      type: 0,
+      content: "Hello World!",
+      bold: 1,
+      align: 2,
+      format: 3
+    }
   };
 
   return new Response(JSON.stringify(printData), {
