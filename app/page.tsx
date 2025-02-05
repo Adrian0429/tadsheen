@@ -1,11 +1,10 @@
-import React from "react";
+"use client";
+
 
 export default function PrintPage() {
   const handlePrint = () => {
-    // Construct the print URL following the Bluetooth Print app scheme
     const printUrl =
       "my.bluetoothprint.scheme://https://tadsheen.vercel.app/api/print";
-
     const link = document.createElement("a");
     link.href = printUrl;
     link.click();

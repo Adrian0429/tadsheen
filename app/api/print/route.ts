@@ -1,7 +1,6 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+import { NextResponse } from 'next/server';
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  // Construct JSON payload for printing
+export async function GET() {
   const printData = [
     {
       type: 0, // text
@@ -12,6 +11,5 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     }
   ];
 
-  // Send JSON response
-  res.status(200).json(printData);
+  return NextResponse.json(printData);
 }
