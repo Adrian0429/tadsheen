@@ -12,7 +12,7 @@ const Home = () => {
   return (
     <div>
       <h1>Bluetooth Print</h1>
-      <button id="connect" onClick={handleConnectAndPrint}>
+      <button className="border px-5 py-5 bg-blue-300" id="connect" onClick={handleConnectAndPrint}>
         Connect and Print
       </button>
       <p id="status"></p>
