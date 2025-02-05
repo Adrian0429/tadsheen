@@ -1,21 +1,23 @@
-import { NextRequest, NextResponse } from 'next/server';
-
-export async function POST(request: NextRequest) {
-  try {
-    const body = await request.json();
-    
-    // Validate the input 
-    if (!body || !body['0'] || !body['0'].content) {
-      return NextResponse.json({ error: 'Invalid input' }, { status: 400 });
+export async function GET() {
+  const receiptData = {
+    "0": {
+      type: 4,
+      content: `
+        <div style="width: 100%; text-align: center; font-size: 24px;">
+          <br><br>
+          <h1 style="font-size: 36px;">TADSHEEN STORE</h1>
+          <p>Item: Product</p>
+          <p>Price: $10.00</p>
+          <p>Thank You!</p>
+          <br><br>
+        </div>
+      `
     }
+  };
 
-    return new Response(JSON.stringify(body), {
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  } catch (error) {
-    return NextResponse.json({ error: 'Invalid JSON' }, { status: 400 });
-  }
+  return new Response(JSON.stringify(receiptData), {
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
 }
