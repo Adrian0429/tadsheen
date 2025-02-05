@@ -1,3 +1,6 @@
+// bluetoothPrint.js
+import PrintPlugin from "bluetooth-print-js";
+
 export function startBluetoothPrint() {
     let printer = new PrintPlugin("80mm");
     printer.connectToPrint({
