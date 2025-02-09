@@ -11,7 +11,7 @@ export async function GET() {
     // Store address line 1
     "1": {
       type: 0,
-      content: "Jl. Jenderal Ahmad Yani, Bugis, Tanjung Redeb, Berau, 77312, Indonesia",
+      content: "Jl. Jenderal Ahmad Yani, Bugis, Tanjung Redeb,\nBerau, 77312, Indonesia",
       bold: 0,
       align: 1,
       format: 4
@@ -21,7 +21,7 @@ export async function GET() {
       type: 0,
       content: "No. Nota    : 0001",
       bold: 0,
-      align: 1,
+      align: 0,
       format: 4
     },
     // Phone number
@@ -29,7 +29,7 @@ export async function GET() {
       type: 0,
       content: "tanggal     : 2021-08-01 12:00:00",
       bold: 0,
-      align: 1,
+      align: 0,
       format: 4
     },
     // Separator
@@ -50,21 +50,27 @@ export async function GET() {
     },
     // Date and time
     "6": {
-      type: 4,
-      content: "<div style=\"display: flex; flex-direction: row; justify-content: space-evenly;\"><p>L</p><p>2 X 420.000</p><p>840.000</p></div>",
+      type: 0,
+      content: "L | 2 pcs | 150.000 = 300.000",
+      bold: 0,
+      align: 0,
+      format: 0
     },
     // Separator before items
     "7": {
       type: 0,
-      content: "---------------------------------------",
+      content: "M | 2 pcs | 150.000 = 300.000",
       bold: 0,
-      align: 1,
+      align: 0,
       format: 0
     },
     // Items section - this would be dynamically generated based on items
     "8": {
-      type: 4,
-      content: "<div style=\"display: flex; flex-direction: row; justify-content: space-evenly;\"><p>L</p><p>2 X 420.000</p><p>840.000</p></div>",
+            type: 0,
+      content: "XXL | 2 pcs | 150.000 = 300.000",
+      bold: 0,
+      align: 0,
+      format: 0
     },
     // Separator after items
     "9": {
@@ -88,7 +94,7 @@ export async function GET() {
       content: "Diskon: {discount}",
       bold: 0,
       align: 0,
-      format: 1
+      format: 4
     },
     // Total amount
     "12": {
@@ -96,7 +102,7 @@ export async function GET() {
       content: "Total 840.000",
       bold: 1,
       align: 0,
-      format: 1
+      format: 0
     },
     // Separator
     "13": {
