@@ -2,8 +2,7 @@ import axios from 'axios';
 
 
 export async function GET(
-  request: Request,
-  { params }: { params: { id: string } } // ✅ Correctly accessing params
+  { params }: { params: { id: string } }  // ✅ Correctly accessing params
 ) {
 
     const {id} = await params;
