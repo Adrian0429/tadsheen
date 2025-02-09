@@ -1,9 +1,19 @@
 import { NextRequest } from "next/server";
 import axios from "axios";
 
-export async function GET(request: NextRequest, { params }: { params: { id: string } }) {
+export async function GET(request: NextRequest) {
   try {
-    const { id } = params; // ✅ Correct synchronous destructuring
+    // Extract the ID from the request URL
+    const url = new URL(request.url);
+    const id = url.pathname.split("/").pop(); // Extract last part of the path (ID)
+
+    if (!id) {
+      return new Response(JSON.stringify({ error: "Missing ID parameter" }), {
+        status: 400,
+        headers: { "Content-Type": "application/json" },
+      });
+    }
+
     console.log(`ID Transaksi: ${id}`);
 
     const apiUrl = `https://emerging-pig-liberal.ngrok-free.app/api/transaksi/print-mobile`;
