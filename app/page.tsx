@@ -1,10 +1,9 @@
 "use client";
 
-
 export default function PrintPage() {
   const handlePrint = () => {
     const printUrl =
-      "my.bluetoothprint.scheme://https://tadsheen.vercel.app/api/print";
+      "my.bluetoothprint.scheme://https://tadsheen.vercel.app/api/print/1";
     const link = document.createElement("a");
     link.href = printUrl;
     link.click();
