@@ -16,7 +16,7 @@ export async function GET(request: NextRequest) {
 
     console.log(`ID Transaksi: ${id}`);
 
-    const apiUrl = `https://emerging-pig-liberal.ngrok-free.app/api/transaksi/print-mobile`;
+    const apiUrl = `https://emerging-pig-liberal.ngrok-free.app/api/transaksi/print-mobile${id}`;
 
     const response = await axios.get(apiUrl, {
       headers: {

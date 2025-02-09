@@ -3,7 +3,7 @@
 export default function PrintPage() {
   const handlePrint = () => {
     const printUrl =
-      "my.bluetoothprint.scheme://https://tadsheen.vercel.app/api/print/1";
+      "my.bluetoothprint.scheme://https://tadsheen.vercel.app/api/print/202502040005";
     const link = document.createElement("a");
     link.href = printUrl;
     link.click();
